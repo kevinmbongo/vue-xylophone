@@ -1,31 +1,65 @@
 <template>
   <div id="app">
     <article class="flex flex-col md:flex-row w-screen h-screen">
-      <section class="bg-red-600 hover:bg-red-700" />
-      <section class="bg-yellow-600 hover:bg-yellow-700" />
-      <section class="bg-yellow-400 hover:bg-yellow-500" />
-      <section class="bg-green-600 hover:bg-green-700" />
-      <section class="bg-blue-600 hover:bg-blue-700" />
-      <section class="bg-purple-600 hover:bg-purple-700" />
-      <section class="bg-pink-600 hover:bg-pink-700" @click="playSound" />
+      <piano-key
+        v-for="item in items"
+        :key="item.noteUrl"
+        :note-url="item.noteUrl"
+        :color="item.color"
+      />
     </article>
   </div>
 </template>
 
 <script>
+import PianoKey from '@/components/core/PianoKey'
+
 export default {
   name: 'App',
 
-  methods: {
-    playSound() {
-      console.log('coucou')
+  components: { PianoKey },
+
+  computed: {
+    items() {
+      return [
+        {
+          noteUrl: require('@/assets/sounds/note7.wav'),
+          color: '#dc3030',
+          accentColor: '',
+          keyBordKey: 'S',
+        },
+        {
+          noteUrl: require('@/assets/sounds/note6.wav'),
+          color: '#6fdc30',
+          accentColor: '',
+        },
+        {
+          noteUrl: require('@/assets/sounds/note5.wav'),
+          color: '#30a8dc',
+          accentColor: '',
+        },
+        {
+          noteUrl: require('@/assets/sounds/note4.wav'),
+          color: '#dc3078',
+          accentColor: '',
+        },
+        {
+          noteUrl: require('@/assets/sounds/note3.wav'),
+          color: '#dcb430',
+          accentColor: '',
+        },
+        {
+          noteUrl: require('@/assets/sounds/note2.wav'),
+          color: '#dc6c30',
+          accentColor: '',
+        },
+        {
+          noteUrl: require('@/assets/sounds/note1.wav'),
+          color: '#6130dc',
+          accentColor: '',
+        },
+      ]
     },
   },
 }
 </script>
-
-<style scoped>
-section {
-  @apply transition-all duration-300 ease-in-out flex-1 cursor-pointer;
-}
-</style>
