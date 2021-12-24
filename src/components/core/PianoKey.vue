@@ -4,8 +4,8 @@
     :style="{ background: color }"
     @click="playSound()"
   >
-    <div class="bg-gray-300 w-7 h-7 rounded-full"></div>
-    <div class="bg-gray-300 w-7 h-7 rounded-full"></div>
+    <div class="nailStyle"></div>
+    <div class="nailStyle"></div>
   </section>
 </template>
 
@@ -38,5 +38,8 @@ export default {
 <style scoped>
 section {
   @apply transition-all duration-300 ease-in-out flex-1 cursor-pointer;
+}
+.nailStyle {
+  @apply bg-gray-300 w-7 h-7 rounded-full;
 }
 </style>
