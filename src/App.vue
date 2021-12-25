@@ -31,38 +31,79 @@ export default {
         id: 'xylophon',
         keys: [
           {
-            noteUrl: require('@/assets/sounds/note7.wav'),
+            noteUrl: require('@/assets/sounds/xylophone/note7.wav'),
             color: '#dc3030',
             accentColor: '',
             keyBordKey: 'S',
           },
           {
-            noteUrl: require('@/assets/sounds/note6.wav'),
+            noteUrl: require('@/assets/sounds/xylophone/note6.wav'),
             color: '#6fdc30',
             accentColor: '',
           },
           {
-            noteUrl: require('@/assets/sounds/note5.wav'),
+            noteUrl: require('@/assets/sounds/xylophone/note5.wav'),
             color: '#30a8dc',
             accentColor: '',
           },
           {
-            noteUrl: require('@/assets/sounds/note4.wav'),
+            noteUrl: require('@/assets/sounds/xylophone/note4.wav'),
             color: '#dc3078',
             accentColor: '',
           },
           {
-            noteUrl: require('@/assets/sounds/note3.wav'),
+            noteUrl: require('@/assets/sounds/xylophone/note3.wav'),
             color: '#dcb430',
             accentColor: '',
           },
           {
-            noteUrl: require('@/assets/sounds/note2.wav'),
+            noteUrl: require('@/assets/sounds/xylophone/note2.wav'),
             color: '#dc6c30',
             accentColor: '',
           },
           {
-            noteUrl: require('@/assets/sounds/note1.wav'),
+            noteUrl: require('@/assets/sounds/xylophone/note1.wav'),
+            color: '#6130dc',
+            accentColor: '',
+          },
+        ],
+      },
+      {
+        id: 'soundbox',
+        keys: [
+          {
+            noteUrl: require('@/assets/sounds/soundbox/AmongUs.wav'),
+            color: '#dc3030',
+            accentColor: '',
+            keyBordKey: 'S',
+          },
+          {
+            noteUrl: require('@/assets/sounds/soundbox/AmongUs.wav'),
+            color: '#6fdc30',
+            accentColor: '',
+          },
+          {
+            noteUrl: require('@/assets/sounds/soundbox/AmongUs.wav'),
+            color: '#30a8dc',
+            accentColor: '',
+          },
+          {
+            noteUrl: require('@/assets/sounds/soundbox/AmongUs.wav'),
+            color: '#dc3078',
+            accentColor: '',
+          },
+          {
+            noteUrl: require('@/assets/sounds/soundbox/AmongUs.wav'),
+            color: '#dcb430',
+            accentColor: '',
+          },
+          {
+            noteUrl: require('@/assets/sounds/soundbox/AmongUs.wav'),
+            color: '#dc6c30',
+            accentColor: '',
+          },
+          {
+            noteUrl: require('@/assets/sounds/soundbox/AmongUs.wav'),
             color: '#6130dc',
             accentColor: '',
           },
