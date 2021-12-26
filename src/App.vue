@@ -1,27 +1,30 @@
 <template>
   <div id="app">
     <article class="flex flex-col md:flex-row w-screen h-screen">
-      <piano-key
+      <V-piano-key
         v-for="item in instrumentDataBase[currentInstrumentIndex].keys"
         :key="item.noteUrl"
         :note-url="item.noteUrl"
         :color="item.color"
       />
-      <v-button-drawer @click="drawerIsOpen = true" />
-      <v-drawer />
+      <v-button-drawer @click="drawerIsOpen = !drawerIsOpen" />
+      <v-drawer
+        v-show="drawerIsOpen === true"
+        :current-instrument-index="currentInstrumentIndex"
+      />
     </article>
   </div>
 </template>
 
 <script>
-import PianoKey from '@/components/core/VPianoKey'
+import VPianoKey from '@/components/core/VPianoKey'
 import VButtonDrawer from '@/components/core/VButtonDrawer'
 import VDrawer from '@/components/core/VDrawer'
 
 export default {
   name: 'App',
 
-  components: { VDrawer, VButtonDrawer, PianoKey },
+  components: { VDrawer, VButtonDrawer, VPianoKey },
 
   data: () => ({
     drawerIsOpen: false,
@@ -78,32 +81,32 @@ export default {
             keyBordKey: 'S',
           },
           {
-            noteUrl: require('@/assets/sounds/soundbox/AmongUs.wav'),
+            noteUrl: require('@/assets/sounds/soundbox/BoneCrack.wav'),
             color: '#6fdc30',
             accentColor: '',
           },
           {
-            noteUrl: require('@/assets/sounds/soundbox/AmongUs.wav'),
+            noteUrl: require('@/assets/sounds/soundbox/CartoonSlip.wav'),
             color: '#30a8dc',
             accentColor: '',
           },
           {
-            noteUrl: require('@/assets/sounds/soundbox/AmongUs.wav'),
+            noteUrl: require('@/assets/sounds/soundbox/DuckToySqueak.wav'),
             color: '#dc3078',
             accentColor: '',
           },
           {
-            noteUrl: require('@/assets/sounds/soundbox/AmongUs.wav'),
+            noteUrl: require('@/assets/sounds/soundbox/HelloThere.wav'),
             color: '#dcb430',
             accentColor: '',
           },
           {
-            noteUrl: require('@/assets/sounds/soundbox/AmongUs.wav'),
+            noteUrl: require('@/assets/sounds/soundbox/QuickReverbFart.wav'),
             color: '#dc6c30',
             accentColor: '',
           },
           {
-            noteUrl: require('@/assets/sounds/soundbox/AmongUs.wav'),
+            noteUrl: require('@/assets/sounds/soundbox/WetFartMeme.wav'),
             color: '#6130dc',
             accentColor: '',
           },

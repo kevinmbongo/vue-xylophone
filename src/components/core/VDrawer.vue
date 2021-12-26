@@ -4,11 +4,11 @@
       <img src="@/assets/images/guitar.png" alt="guitar" />
       <p>Guitar</p>
     </button>
-    <button>
+    <button @click="currentInstrumentIndex = 1">
       <img src="@/assets/images/piano.png" alt="piano" />
-      <p>Piano</p>
+      <p>Soundbox</p>
     </button>
-    <button>
+    <button @click="currentInstrumentIndex = 0">
       <img src="@/assets/images/xylophone.png" alt="xylophone" />
       <p>Xylophone</p>
     </button>
@@ -18,6 +18,12 @@
 <script>
 export default {
   name: 'VDrawer',
+  props: {
+    currentInstrumentIndex: {
+      type: Number,
+      required: true,
+    },
+  },
 }
 </script>
 
