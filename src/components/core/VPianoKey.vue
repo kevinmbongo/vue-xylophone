@@ -2,7 +2,7 @@
   <section
     class="flex justify-between items-center px-7 md:flex-col md:py-16 hover:opacity-hs90"
     :style="{ background: color }"
-    @click="playSound()"
+    @keydown="test"
   >
     <div class="nailStyle"></div>
     <div class="nailStyle"></div>
@@ -30,6 +30,10 @@ export default {
       let audio = new Audio(this.noteUrl)
 
       audio.play()
+    },
+
+    test(event) {
+      console.log(event)
     },
   },
 }

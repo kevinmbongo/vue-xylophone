@@ -7,10 +7,13 @@
         :note-url="item.noteUrl"
         :color="item.color"
       />
+
       <v-button-drawer @click="drawerIsOpen = !drawerIsOpen" />
+
       <v-drawer
-        v-show="drawerIsOpen === true"
-        :current-instrument-index="currentInstrumentIndex"
+        v-if="drawerIsOpen === true"
+        v-model="currentInstrumentIndex"
+        @click="handleIndex"
       />
     </article>
   </div>
@@ -28,10 +31,12 @@ export default {
 
   data: () => ({
     drawerIsOpen: false,
+
     currentInstrumentIndex: 0,
+
     instrumentDataBase: [
       {
-        id: 'xylophon',
+        id: 'xylophone',
         keys: [
           {
             noteUrl: require('@/assets/sounds/xylophone/note7.wav'),
