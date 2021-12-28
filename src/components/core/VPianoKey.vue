@@ -2,7 +2,7 @@
   <section
     class="flex justify-between items-center px-7 md:flex-col md:py-16 hover:opacity-hs90"
     :style="{ background: color }"
-    @keydown="test"
+    @click="playSound"
   >
     <div class="nailStyle"></div>
     <div class="nailStyle"></div>
@@ -23,6 +23,22 @@ export default {
       type: String,
       required: true,
     },
+
+    keyBordKey: {
+      type: String,
+      required: true,
+    },
+
+    currentKey: {
+      type: String,
+      required: true,
+    },
+  },
+
+  watch: {
+    currentKey() {
+      this.handleKeyPress()
+    },
   },
 
   methods: {
@@ -32,8 +48,12 @@ export default {
       audio.play()
     },
 
-    test(event) {
-      console.log(event)
+    handleKeyPress() {
+      if (this.keyBordKey === this.currentKey) {
+        this.playSound()
+
+        this.$emit('reset-current-index')
+      }
     },
   },
 }
